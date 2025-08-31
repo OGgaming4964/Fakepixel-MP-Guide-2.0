@@ -20,7 +20,7 @@
     }
 
     .cool-table th, .cool-table td {
-        padding: 8px;
+        padding: 10px;
         border: 1px solid #ccc;
         text-align: center;
     }
@@ -36,49 +36,21 @@
     .rare { background-color: #ADD8E6; }
     .uncommon { background-color: #90EE90; }
     .common { background-color: #D3D3D3; }
+    .mythic { background-color: #FFB6C1; }
+    .special { background-color: #FFCCCB; }
+    .buff { background-color: #FFFACD; }      /* light yellow */
+    .total { background-color: #E0FFFF; }     /* light cyan */
 
-    /* Special rows */
-    .total-row { font-weight: bold; background-color: rgba(200,200,200,0.8); }
-
-
-    th, td {
-        padding: 12px;
-        text-align: center;
-    }
-
-    th {
-        background-color: #333;
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: rgba(0,0,0,0.05);
-    }
-
-    tr:hover {
-        background-color: rgba(0,0,0,0.1);
-    }
+    /* Hover effect */
+    .cool-table tr:hover { background-color: rgba(0,0,0,0.05); }
 
     a {
         color: #0000EE;
         text-decoration: none;
     }
+    a:hover { text-decoration: underline; }
 
-    a:hover {
-        text-decoration: underline;
-    }
-
-    /* Color-coded MP table rows */
-    .legendary { background-color: #ADD8E6; }
-    .epic { background-color: #D8BFD8; }
-    .rare { background-color: #B0E0E6; }
-    .uncommon { background-color: #90EE90; }
-    .common { background-color: #D3D3D3; }
-    .mythic { background-color: #FFB6C1; }
-    .special { background-color: #FFCCCB; }
-    .buff { background-color: #FFFACD; }      /* light yellow for buffs */
-    .total { background-color: #E0FFFF; }     /* light cyan for totals */
-
+    /* Info box */
     .info-section {
         width: 90%;
         margin: 20px auto;
