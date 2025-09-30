@@ -5,67 +5,117 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fakepixel MP Guide</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-image: url("2021-04-22_22.19.05.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        margin: 0;
-        padding: 0;
-        color: #333;
-    }
+/* ===== BODY & HEADINGS ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("2021-04-22_22.19.05.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+h1, h2 {
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 5px #000;
+}
 
-     h1, h2 {
-        text-align: center;
-        color: #fff;
-        text-shadow: 1px 1px 5px #000;
-    }
+/* ===== TABLE BASE ===== */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.4);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+th, td {
+    padding: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+th {
+    cursor: pointer;
+}
 
-    table {
-        width: 90%;
-        margin: 20px auto;
-        border-collapse: collapse;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        background-color: transparent;
-    }
+/* ===== STRIPED ROWS ===== */
+tr:nth-child(even) {
+    background-color: rgba(255,255,255,0.05);
+}
 
-    th, td {
-        padding: 12px;
-        text-align: center;
-    }
+/* ===== HOVER EFFECTS ===== */
+tr:hover {
+    background-color: rgba(0,200,255,0.1);
+    box-shadow: inset 0 0 12px rgba(0,200,255,0.4);
+}
 
-    th {
-        background-color: #333;
-        color: white;
-    }
+/* ===== LINKS ===== */
+a {
+    color: #00ffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 8px #00ffff;
+}
 
-    tr:nth-child(even) {
-        background-color: rgba(0,0,0,0.05);
-    }
+/* ===== ACCESSORIES TABLE GLOW ===== */
+.accessories-table td:hover,
+.accessories-table th:hover {
+    background-color: rgba(255,255,255,0.15);
+    box-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 25px rgba(255,255,255,0.4);
+}
 
-    tr:hover {
-        background-color: rgba(0,0,0,0.1);
-    }
+/* ===== MP TABLE COLORS ===== */
+.glow-table tr.legendary { background-color: rgba(255,223,0,0.1); }
+.glow-table tr.epic      { background-color: rgba(128,0,128,0.1); }
+.glow-table tr.rare      { background-color: rgba(0,0,255,0.1); }
+.glow-table tr.uncommon  { background-color: rgba(0,128,0,0.1); }
+.glow-table tr.common    { background-color: rgba(47,79,79,0.1); }
+.glow-table tr.mythic    { background-color: rgba(231,84,128,0.1); }
+.glow-table tr.special   { background-color: rgba(139,0,0,0.1); }
+.glow-table tr.buff      { background-color: rgba(0,200,255,0.1); }
+.glow-table tr.total     { font-weight: bold; background-color: rgba(255,255,255,0.1); }
 
-    a {
-        color: #0000EE;
-        text-decoration: none;
-    }
+/* ===== MP TABLE HOVER ===== */
+.glow-table tr:hover td {
+    background-color: rgba(0,200,255,0.15);
+    box-shadow: inset 0 0 12px rgba(0,200,255,0.5);
+}
 
-    a:hover {
-        text-decoration: underline;
-    }
-    .info-section {
-        width: 90%;
-        margin: 20px auto;
-        padding: 15px;
-        background-color: transparent;
-        border-radius: 10px;
-    }
+/* ===== GLOW TABLE FULL HOVER ===== */
+.glow-table:hover {
+    box-shadow: 0 0 25px rgba(0,200,255,0.7), 0 0 45px rgba(0,200,255,0.5);
+    transform: scale(1.01);
+}
+
+/* ===== SPECIAL TABLE ===== */
+.glow-table.special-table th, 
+.glow-table.special-table td {
+    text-align: center;
+}
+.glow-table.special-table td:hover {
+    background-color: rgba(255,182,193,0.3);
+    box-shadow: 0 0 15px rgba(255,182,193,0.7);
+}
+
+/* ===== INFO SECTION ===== */
+.info-section {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
 </style>
+
 </head>
 <body>
 
@@ -73,7 +123,7 @@
 
 <!-- Accessories Table -->
 <h2>List of Accessories</h2>
-<table border="1">
+<table class="accessories-table">
 <thead>
 <tr>
     <th style="background-color:#FFD700; color:black">Legendary</th>
@@ -82,7 +132,7 @@
     <th style="background-color:#008000; color:white">Uncommon</th>
     <th style="background-color:#2F4F4F; color:white">Common</th>
     <th style="background-color:#E75480; color:white">Mythic</th>
-    <th style="background-color:#8B0000; color:white">Special</th>>
+    <th style="background-color:#8B0000; color:white">Special</th>
 </tr>
 </thead>
 <tbody>
@@ -199,6 +249,8 @@
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Bat_Person_Artifact" target="_blank">Bat Person Artifact</a></td>
     <td>Total: 11</td>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/King_Talisman" target="_blank">King Talisman</a></td>
+    <td></td>
+    <td></td>
 </tr>
 
 <tr>
@@ -207,6 +259,8 @@
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Glacial_Artifact" target="_blank">Glacial Artifact</a></td>
     <td></td>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Great_Spook_Talisman" target="_blank">Great Spook Talisman*</a></td>
+    <td></td>
+    <td></td>
 </tr>
 
 <tr>
@@ -215,6 +269,8 @@
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Fish_Affinity_Talisman" target="_blank">Fish Affinity Talisman</a></td>
     <td></td>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Pocket_Espresso_Machine" target="_blank">Pocket Espresso Machine</a></td>
+    <td></td>
+    <td></td>
 </tr>
 
 <tr>
@@ -223,6 +279,8 @@
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Sea_Creature_Artifact" target="_blank">Sea Creature Artifact</a></td>
     <td></td>
     <td>Total: 14</td>
+    <td></td>
+    <td></td>
 </tr>
 
 <tr>
@@ -231,12 +289,16 @@
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Feather_Artifact" target="_blank">Feather Artifact</a></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
 </tr>
 
 <tr>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Candy_Relic" target="_blank">Candy Relic</a></td>
-    <td><a href="https://hypixel-skyblock.fandom.com/wiki/Glossy_Mineral_Talisman" target="_blank">Glossy Mineral Talisman</a></td></td>
+    <td><a href="https://hypixel-skyblock.fandom.com/wiki/Glossy_Mineral_Talisman" target="_blank">Glossy Mineral Talisman</a></td>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Blaze_Talisman" target="_blank">Blaze Talisman</a></td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
@@ -247,12 +309,16 @@
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Eternal_Hoof" target="_blank">Eternal Hoof</a></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
 </tr>
 
 <tr>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Golden_Jerry_Artifact" target="_blank">Golden Jerry Artifact</a></td>
     <td>Total: 18</td>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Fermento_Artifact" target="_blank">Fermento Artifact</a></td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
@@ -263,12 +329,16 @@
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Vaccine_Artifact" target="_blank">Vaccine Artifact</a></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
 </tr>
 
 <tr>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Pulse_Ring" target="_blank">Pulse Ring</a></td>
     <td></td>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Abicases" target="_blank">Abicase</a></td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
@@ -279,6 +349,8 @@
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Bucket_of_Dye" target="_blank">Bucket of Dye</a></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
 </tr>
 
 <tr>
@@ -287,12 +359,16 @@
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Hunter_Ring" target="_blank">Hunter Ring</a></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
 </tr>
 
 <tr>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Hegemony_Artifact" target="_blank">Hegemony Artifact</a></td>
     <td></td>
-    <td><a href="https://hypixel-skyblock.fandom.com/wiki/Hunter_Ring" target="_blank">Hunter Ring</a></td>
+    <td><a href="https://hypixel-skyblock.fandom.com/wiki/Artifact_of_Power" target="_blank">Artifact of Power</a></td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
@@ -301,11 +377,19 @@
     <td >Bugged Piece of Code</td>
     <td></td>
     <td><a href="https://hypixel-skyblock.fandom.com/wiki/Artifact_of_Power" target="_blank">Artifact of Power</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
 </tr>
 <tr>
     <td>Total: 25</td>
     <td></td>
     <td>Total: 25</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
     
 </tr>
 </tbody>
@@ -313,7 +397,7 @@
 
 <!-- MP Table -->
 <h2>MP Stats</h2>
-<table border="1">
+<table class="glow-table">
 <thead>
 <tr>
     <th>MAX MP</th>
@@ -390,7 +474,7 @@
 <tr class="total">
     <td>Total</td>
     <td>-</td>
-    <td>995</td>
+    <td>971</td>
     <td>-</td>
     <td>1364</td>
 </tr>
@@ -398,7 +482,7 @@
 </table>
 
 
-<table border="1" style="width:90%; margin:20px auto; border-collapse:collapse; border-radius:10px; overflow:hidden; box-shadow:0 0 15px rgba(0,0,0,0.2); background-color:rgba(255,255,255,0.9);">
+<table style="width:90%; margin:20px auto; border-collapse:collapse; border-radius:10px; overflow:hidden; box-shadow:0 0 15px rgba(0,0,0,0.2); background-color:rgba(255,255,255,0.9);" class="glow-table">
 <thead>
 <tr style="background-color:#FFD700; text-align:center;">
     <th colspan="2">NOT OBTAINABLE ANYMORE!*</th>
